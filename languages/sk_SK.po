@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Additional Block Styles\n"
 "Report-Msgid-Bugs-To: https://support.webmandesign.eu\n"
-"POT-Creation-Date: 2023-03-14 16:21+0100\n"
-"PO-Revision-Date: 2023-03-14 16:38+0100\n"
+"POT-Creation-Date: 2023-03-14 23:19+0100\n"
+"PO-Revision-Date: 2023-03-14 23:19+0100\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: WebMan Design\n"
 "Language: sk_SK\n"
@@ -15,8 +15,8 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
-"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: includes/Block.php:59
@@ -66,7 +66,7 @@ msgid "\"Action hook\" block options"
 msgstr "Možnosti bloku \"Hák akcie\""
 
 #: includes/Options.php:117
-msgid "Options for \"Action hook\" block provided by Action Block plugin."
+msgid "Options for \"Action hook\" block provided by Action Hook Block plugin."
 msgstr "Možnosti bloku \"Hák akcie\" poskytovaného pluginom Blok Akcie."
 
 #: includes/Options.php:129
@@ -244,23 +244,23 @@ msgstr "Info o Theme Hook Alliance →"
 msgid "Enable Theme Hook Alliance action hooks"
 msgstr "Povoliť háky akcií Theme Hook Alliance"
 
-#: blocks/action/dev/block.js:26
+#: blocks/action-hook/dev/block.js:28
 msgid "Executing this PHP code here:"
 msgstr "Na tomto mieste vykoná tento PHP kód:"
 
-#: blocks/action/dev/block.js:30
+#: blocks/action-hook/dev/block.js:32
 msgid "Select a hook to execute here."
 msgstr "Zvoľte hák, ktorý sa tu má vykonať."
 
-#: blocks/action/dev/block.js:40
+#: blocks/action-hook/dev/block.js:42
 msgid "Hook name"
 msgstr "Názov háku"
 
-#: blocks/action/dev/block.js:48
+#: blocks/action-hook/dev/block.js:50
 msgid "Optional context"
 msgstr "Voliteľný kontext"
 
-#: blocks/action/dev/block.js:51
+#: blocks/action-hook/dev/block.js:51
 msgid ""
 "Context value will be passed into the action hook as an additional argument."
 msgstr "Hodnota kontextu sa predá do háka akcie ako dodatočný parameter."

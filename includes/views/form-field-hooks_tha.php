@@ -2,13 +2,13 @@
 /**
  * Form field: Theme Hook Alliance.
  *
- * @package    Action Block
+ * @package    Action Hook Block
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since  1.0.0
  */
 
-namespace WebManDesign\Blocks\Action;
+namespace WebManDesign\Blocks\Action_Hook;
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
@@ -16,8 +16,8 @@ defined( 'ABSPATH' ) || exit;
 ?>
 
 <p class="description">
-	<?php esc_html_e( 'By default, plugin allows you to select Theme Hook Alliance action hooks in the block.', 'action-block' ); ?>
-	(<a href="https://github.com/zamoose/themehookalliance"><?php esc_html_e( 'Theme Hook Alliance info →', 'action-block' ); ?></a>)
+	<?php esc_html_e( 'By default, plugin allows you to select Theme Hook Alliance action hooks in the block.', 'action-hook-block' ); ?>
+	(<a href="https://github.com/zamoose/themehookalliance"><?php esc_html_e( 'Theme Hook Alliance info →', 'action-hook-block' ); ?></a>)
 </p>
 
 <p>
@@ -28,6 +28,6 @@ defined( 'ABSPATH' ) || exit;
 			value="true"
 			<?php checked( true, Options::get( 'hooks_tha' ) ); ?>
 			/>
-		<strong><?php esc_html_e( 'Enable Theme Hook Alliance action hooks', 'action-block' ); ?></strong>
+		<strong><?php esc_html_e( 'Enable Theme Hook Alliance action hooks', 'action-hook-block' ); ?></strong>
 	</label>
 </p>

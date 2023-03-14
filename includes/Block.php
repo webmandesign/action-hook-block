@@ -2,13 +2,13 @@
 /**
  * Block.
  *
- * @package    Action Block
+ * @package    Action Hook Block
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since  1.0.0
  */
 
-namespace WebManDesign\Blocks\Action;
+namespace WebManDesign\Blocks\Action_Hook;
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
@@ -46,30 +46,30 @@ class Block {
 		// Variables
 
 			/**
-			 * Filters registration arguments for `wmd/action-block` block.
+			 * Filters registration arguments for `wmd/action-hook` block.
 			 *
 			 * @since  1.0.0
 			 *
 			 * @param  array $args
 			 */
-			$args = (array) apply_filters( 'action-block/block/register/args', array(
+			$args = (array) apply_filters( 'action-hook-block/block/register/args', array(
 				'api_version' => 2,
-				'version'     => ACTION_BLOCK_VERSION,
+				'version'     => ACTION_HOOK_BLOCK_VERSION,
 
-				'title'       => esc_html__( 'Action hook', 'action-block' ),
-				'description' => esc_html__( 'WordPress PHP action hook, such as Theme Hook Alliance.', 'action-block' ),
+				'title'       => esc_html__( 'Action hook', 'action-hook-block' ),
+				'description' => esc_html__( 'WordPress PHP action hook, such as Theme Hook Alliance.', 'action-hook-block' ),
 				'category'    => 'theme',
 				'icon'        => ( is_rtl() ) ? ( 'arrow-left-alt' ) : ( 'arrow-right-alt' ),
 				'keywords'    => array(
-					esc_html_x( 'THA', 'Block search keyword. Theme Hook Alliance abbreviation.', 'action-block' ),
-					esc_html_x( 'theme', 'Block search keyword.', 'action-block' ),
-					esc_html_x( 'hook', 'Block search keyword.', 'action-block' ),
-					esc_html_x( 'alliance', 'Block search keyword.', 'action-block' ),
-					esc_html_x( 'action', 'Block search keyword.', 'action-block' ),
-					esc_html_x( 'PHP', 'Block search keyword.', 'action-block' ),
+					esc_html_x( 'THA', 'Block search keyword. Theme Hook Alliance abbreviation.', 'action-hook-block' ),
+					esc_html_x( 'theme', 'Block search keyword.', 'action-hook-block' ),
+					esc_html_x( 'hook', 'Block search keyword.', 'action-hook-block' ),
+					esc_html_x( 'alliance', 'Block search keyword.', 'action-hook-block' ),
+					esc_html_x( 'action', 'Block search keyword.', 'action-hook-block' ),
+					esc_html_x( 'PHP', 'Block search keyword.', 'action-hook-block' ),
 				),
 
-				'textdomain' => 'action-block',
+				'textdomain' => 'action-hook-block',
 
 				'attributes' => array(
 					'name' => array(
@@ -92,8 +92,8 @@ class Block {
 					),
 				),
 
-				'editor_script_handles' => array( 'action-block' ),
-				'editor_style_handles'  => array( 'action-block' ),
+				'editor_script_handles' => array( 'action-hook-block' ),
+				'editor_style_handles'  => array( 'action-hook-block' ),
 
 				'render_callback' => __CLASS__ . '::render',
 			) );
@@ -101,7 +101,7 @@ class Block {
 
 		// Processing
 
-			register_block_type( 'wmd/action-block', $args );
+			register_block_type( 'wmd/action-hook', $args );
 
 	} // /register
 
@@ -126,7 +126,7 @@ class Block {
 		// Variables
 
 			$output    = '';
-			$container = ( empty( $atts['align'] ) ) ? ( '%s' ) : ( '<div class="wp-block-wmd-action-block align' . esc_attr( $atts['align'] ) . '">%s</div>' );
+			$container = ( empty( $atts['align'] ) ) ? ( '%s' ) : ( '<div class="wp-block-wmd-action-hook-block align' . esc_attr( $atts['align'] ) . '">%s</div>' );
 			$context   = ( empty( $atts['context'] ) ) ? ( null ) : ( (string) $atts['context'] );
 
 
@@ -158,8 +158,8 @@ class Block {
 
 		// Variables
 
-			$handle  = 'action-block';
-			$version = 'v' . ACTION_BLOCK_VERSION;
+			$handle  = 'action-hook-block';
+			$version = 'v' . ACTION_HOOK_BLOCK_VERSION;
 			$hooks   = Hooks::get();
 
 			$editor_preview_info = wp_parse_args(
@@ -173,7 +173,7 @@ class Block {
 				 *
 				 * @param  array $editor_preview_info
 				 */
-				(array) apply_filters( 'action-block/hooks/get', array() ),
+				(array) apply_filters( 'action-hook-block/hooks/get', array() ),
 				array(
 					'top'    => '',
 					'bottom' => '',
@@ -185,7 +185,7 @@ class Block {
 
 			wp_register_script(
 				$handle,
-				ACTION_BLOCK_URL . 'blocks/action/block.js',
+				ACTION_HOOK_BLOCK_URL . 'blocks/action-hook/block.js',
 				array(
 					'wp-blocks',
 					'wp-element',
@@ -199,7 +199,7 @@ class Block {
 
 				wp_add_inline_script(
 					$handle,
-					'var wmdActionBlock = {'
+					'var wmdActionHookBlock = {'
 						. 'hooks: [ ' . implode( ',',
 							array_map(
 								function( $name, $label ) {
@@ -219,7 +219,7 @@ class Block {
 
 			wp_register_style(
 				$handle,
-				ACTION_BLOCK_URL . 'blocks/action/block.css',
+				ACTION_HOOK_BLOCK_URL . 'blocks/action-hook/block.css',
 				array(
 					'wp-components',
 				),

@@ -2,13 +2,13 @@
 /**
  * Plugin options.
  *
- * @package    Action Block
+ * @package    Action Hook Block
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since  1.0.0
  */
 
-namespace WebManDesign\Blocks\Action;
+namespace WebManDesign\Blocks\Action_Hook;
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
@@ -22,7 +22,7 @@ class Options {
 	 * @access  public
 	 * @var     string
 	 */
-	public static $option_name = 'action_block';
+	public static $option_name = 'action_hook_block';
 
 	/**
 	 * Plugin options section name.
@@ -31,7 +31,7 @@ class Options {
 	 * @access  public
 	 * @var     string
 	 */
-	public static $options_section = 'action_block_options';
+	public static $options_section = 'action_hook_block_options';
 
 	/**
 	 * Soft cache for options.
@@ -83,7 +83,7 @@ class Options {
 
 			// Filters
 
-				add_filter( 'plugin_action_links_' . plugin_basename( ACTION_BLOCK_FILE ), __CLASS__ . '::plugin_action_links' );
+				add_filter( 'plugin_action_links_' . plugin_basename( ACTION_HOOK_BLOCK_FILE ), __CLASS__ . '::plugin_action_links' );
 
 	} // /init
 
@@ -110,11 +110,11 @@ class Options {
 
 			add_settings_section(
 				self::$options_section,
-				esc_html__( '"Action hook" block options', 'action-block' ),
+				esc_html__( '"Action hook" block options', 'action-hook-block' ),
 				function() {
 					echo
 						'<p>'
-						. esc_html__( 'Options for "Action hook" block provided by Action Block plugin.', 'action-block' )
+						. esc_html__( 'Options for "Action hook" block provided by Action Hook Block plugin.', 'action-hook-block' )
 						. '</p>';
 				},
 				'writing',
@@ -126,7 +126,7 @@ class Options {
 
 				add_settings_field(
 					'hooks_tha',
-					esc_html__( 'Theme Hook Alliance hooks', 'action-block' ),
+					esc_html__( 'Theme Hook Alliance hooks', 'action-hook-block' ),
 					function() { self::render_form_field( 'hooks_tha' ); },
 					'writing',
 					self::$options_section
@@ -134,7 +134,7 @@ class Options {
 
 				add_settings_field(
 					'hooks_custom',
-					esc_html__( 'Custom hook names', 'action-block' ),
+					esc_html__( 'Custom hook names', 'action-hook-block' ),
 					function() { self::render_form_field( 'hooks_custom' ); },
 					'writing',
 					self::$options_section
@@ -155,7 +155,7 @@ class Options {
 
 		// Processing
 
-			require_once ACTION_BLOCK_PATH . 'includes/views/form-field-' . sanitize_title( $field ) . '.php';
+			require_once ACTION_HOOK_BLOCK_PATH . 'includes/views/form-field-' . sanitize_title( $field ) . '.php';
 
 	} // /render_form_field
 
@@ -241,8 +241,8 @@ class Options {
 		// Processing
 
 			$links[] =
-				'<a href="' . esc_url( get_admin_url( null, 'options-writing.php#action_block_options' ) ) . '">'
-				. esc_html_x( 'Settings', 'Plugin action link.', 'action-block' )
+				'<a href="' . esc_url( get_admin_url( null, 'options-writing.php#action_hook_block_options' ) ) . '">'
+				. esc_html_x( 'Settings', 'Plugin action link.', 'action-hook-block' )
 				. '</a>';
 
 

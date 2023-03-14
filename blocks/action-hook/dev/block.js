@@ -1,7 +1,7 @@
 /**
  * Block editor script.
  *
- * @package    Action Block
+ * @package    Action Hook Block
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since  1.0.0
@@ -12,7 +12,7 @@
 
 	const __ = wp.i18n.__;
 
-	wp.blocks.registerBlockType( 'wmd/action-block', {
+	wp.blocks.registerBlockType( 'wmd/action-hook', {
 
 		edit: ( props ) => {
 
@@ -20,16 +20,16 @@
 				name    = props.attributes.name,
 				context = props.attributes.context,
 				info    = {
-					top: ( wmdActionBlock.info.top ) ? ( wp.element.createElement( 'p', { class: 'wp-block-wmd-action-block__info--top' }, wmdActionBlock.info.top ) ) : ( '' ),
-					bottom: ( wmdActionBlock.info.bottom ) ? ( wp.element.createElement( 'p', { class: 'wp-block-wmd-action-block__info--bottom' }, wmdActionBlock.info.bottom ) ) : ( '' ),
+					top: ( wmdActionHookBlock.info.top ) ? ( wp.element.createElement( 'p', { class: 'wp-block-wmd-action-hook-block__info--top' }, wmdActionHookBlock.info.top ) ) : ( '' ),
+					bottom: ( wmdActionHookBlock.info.bottom ) ? ( wp.element.createElement( 'p', { class: 'wp-block-wmd-action-hook-block__info--bottom' }, wmdActionHookBlock.info.bottom ) ) : ( '' ),
 				};
 
 			let
-				description = __( 'Executing this PHP code here:', 'action-block' ),
+				description = __( 'Executing this PHP code here:', 'action-hook-block' ),
 				code        = wp.element.createElement( 'code', {}, "do_action( '" + name + "' );" );
 
 			if ( '' === name ) {
-				description = __( 'Select a hook to execute here.', 'action-block' )
+				description = __( 'Select a hook to execute here.', 'action-hook-block' )
 				code        = '';
 			}
 
@@ -39,16 +39,16 @@
 						wp.element.createElement( wp.components.PanelBody, {},
 							wp.element.createElement( wp.components.SelectControl,
 								{
-									label    : __( 'Hook name', 'action-block' ),
+									label    : __( 'Hook name', 'action-hook-block' ),
 									value    : name,
-									options  : wmdActionBlock.hooks,
+									options  : wmdActionHookBlock.hooks,
 									onChange : ( newName ) => props.setAttributes( { name: newName } ),
 								}
 							),
 							wp.element.createElement( wp.components.TextControl,
 								{
-									label    : __( 'Optional context', 'action-block' ),
-									help     : __( 'Context value will be passed into the action hook as an additional argument.', 'action-block' ),
+									label    : __( 'Optional context', 'action-hook-block' ),
+									help     : __( 'Context value will be passed into the action hook as an additional argument.', 'action-hook-block' ),
 									value    : context,
 									onChange : ( newContext ) => props.setAttributes( { context: newContext } ),
 								}

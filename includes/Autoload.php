@@ -4,7 +4,7 @@
  *
  * @link  https://www.php-fig.org/psr/psr-4/
  *
- * @package    Action Block
+ * @package    Action Hook Block
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since  1.0.0
@@ -13,7 +13,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-class Action_Block_Autoload {
+class Action_Hook_Block_Autoload {
 
 	/**
 	 * PHP class namespace.
@@ -22,7 +22,7 @@ class Action_Block_Autoload {
 	 * @access  private
 	 * @var     string
 	 */
-	private static $namespace = 'WebManDesign\Blocks\Action';
+	private static $namespace = 'WebManDesign\Blocks\Action_Hook';
 
 	/**
 	 * Directory to load PHP classes from.
@@ -82,7 +82,7 @@ class Action_Block_Autoload {
 				return false;
 			}
 
-			$path = ACTION_BLOCK_PATH . self::$directory . $path;
+			$path = ACTION_HOOK_BLOCK_PATH . self::$directory . $path;
 
 			if ( ! file_exists( $path ) ) {
 				return false;
@@ -99,4 +99,4 @@ class Action_Block_Autoload {
 
 }
 
-spl_autoload_register( 'Action_Block_Autoload::register' );
+spl_autoload_register( 'Action_Hook_Block_Autoload::register' );
