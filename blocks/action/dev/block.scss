@@ -1,0 +1,39 @@
+//
+// Block editor styles.
+//
+// @package    Action Block
+// @copyright  WebMan Design, Oliver Juhas
+//
+// @since  1.0.0
+//
+
+.wp-block-wmd-action-block {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	padding: .5em 1em;
+	font-size: .8em;
+	text-align: center;
+	background: #3e58e1;
+	color: #fff;
+	border-radius: 3px;
+
+	p,
+	span,
+	code {
+		margin: .125em .25em;
+	}
+
+	p {
+		width: 100%;
+	}
+
+	code {
+		padding: .125em .5em;
+		text-transform: none;
+		letter-spacing: 0;
+		background: rgba( #fff, .2 );
+		border-radius: 3px;
+	}
+}
