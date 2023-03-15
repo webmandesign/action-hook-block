@@ -10,7 +10,7 @@
  * @since  1.0.0
  */
 
-namespace WebManDesign\Block\Action_Hook\;
+namespace WebManDesign\Block\Action_Hook;
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;

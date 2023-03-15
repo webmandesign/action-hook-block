@@ -22,7 +22,7 @@ class Action_Hook_Block_Autoload {
 	 * @access  private
 	 * @var     string
 	 */
-	private static $namespace = 'WebManDesign\Block\Action_Hook\';
+	private static $namespace = 'WebManDesign\Block\Action_Hook';
 
 	/**
 	 * Directory to load PHP classes from.
