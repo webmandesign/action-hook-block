@@ -57,7 +57,7 @@ class Block {
 				'version'     => ACTION_HOOK_BLOCK_VERSION,
 
 				'title'       => esc_html__( 'Action hook', 'action-hook-block' ),
-				'description' => esc_html__( 'WordPress PHP action hook, such as Theme Hook Alliance.', 'action-hook-block' ),
+				'description' => esc_html__( 'Executes a WordPress PHP action hook on front-end of the website.', 'action-hook-block' ),
 				'category'    => 'theme',
 				'icon'        => ( is_rtl() ) ? ( 'arrow-left-alt' ) : ( 'arrow-right-alt' ),
 				'keywords'    => array(

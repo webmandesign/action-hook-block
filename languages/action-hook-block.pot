@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Action Hook Block\n"
 "Report-Msgid-Bugs-To: https://support.webmandesign.eu\n"
-"POT-Creation-Date: 2023-03-14 23:19+0100\n"
+"POT-Creation-Date: 2023-03-15 13:27+0100\n"
 "PO-Revision-Date: 2015-05-12 20:39+0100\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: WebMan Design\n"
@@ -25,7 +25,7 @@ msgid "Action hook"
 msgstr ""
 
 #: includes/Block.php:60
-msgid "WordPress PHP action hook, such as Theme Hook Alliance."
+msgid "Executes a WordPress PHP action hook on front-end of the website."
 msgstr ""
 
 #: includes/Block.php:64
@@ -242,23 +242,23 @@ msgstr ""
 msgid "Enable Theme Hook Alliance action hooks"
 msgstr ""
 
-#: blocks/action-hook/dev/block.js:28
+#: blocks/action-hook/dev/block.js:26
 msgid "Executing this PHP code here:"
 msgstr ""
 
-#: blocks/action-hook/dev/block.js:32
+#: blocks/action-hook/dev/block.js:26
 msgid "Select a hook to execute here."
 msgstr ""
 
-#: blocks/action-hook/dev/block.js:42
+#: blocks/action-hook/dev/block.js:47
 msgid "Hook name"
 msgstr ""
 
-#: blocks/action-hook/dev/block.js:50
+#: blocks/action-hook/dev/block.js:55
 msgid "Optional context"
 msgstr ""
 
-#: blocks/action-hook/dev/block.js:51
+#: blocks/action-hook/dev/block.js:56
 msgid ""
 "Context value will be passed into the action hook as an additional argument."
 msgstr ""

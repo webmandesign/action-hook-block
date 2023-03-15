@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Additional Block Styles\n"
 "Report-Msgid-Bugs-To: https://support.webmandesign.eu\n"
-"POT-Creation-Date: 2023-03-14 23:19+0100\n"
-"PO-Revision-Date: 2023-03-14 23:19+0100\n"
+"POT-Creation-Date: 2023-03-15 13:27+0100\n"
+"PO-Revision-Date: 2023-03-15 13:28+0100\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: WebMan Design\n"
 "Language: sk_SK\n"
@@ -24,8 +24,8 @@ msgid "Action hook"
 msgstr "Hák akcie"
 
 #: includes/Block.php:60
-msgid "WordPress PHP action hook, such as Theme Hook Alliance."
-msgstr "PHP hák akcie WordPress, ako napríklad háky Theme Hook Alliance."
+msgid "Executes a WordPress PHP action hook on front-end of the website."
+msgstr "Vykoná WordPress PHP hák akcie na front-ende webstránky."
 
 #: includes/Block.php:64
 msgctxt "Block search keyword. Theme Hook Alliance abbreviation."
@@ -244,23 +244,23 @@ msgstr "Info o Theme Hook Alliance →"
 msgid "Enable Theme Hook Alliance action hooks"
 msgstr "Povoliť háky akcií Theme Hook Alliance"
 
-#: blocks/action-hook/dev/block.js:28
+#: blocks/action-hook/dev/block.js:26
 msgid "Executing this PHP code here:"
 msgstr "Na tomto mieste vykoná tento PHP kód:"
 
-#: blocks/action-hook/dev/block.js:32
+#: blocks/action-hook/dev/block.js:26
 msgid "Select a hook to execute here."
 msgstr "Zvoľte hák, ktorý sa tu má vykonať."
 
-#: blocks/action-hook/dev/block.js:42
+#: blocks/action-hook/dev/block.js:47
 msgid "Hook name"
 msgstr "Názov háku"
 
-#: blocks/action-hook/dev/block.js:50
+#: blocks/action-hook/dev/block.js:55
 msgid "Optional context"
 msgstr "Voliteľný kontext"
 
-#: blocks/action-hook/dev/block.js:51
+#: blocks/action-hook/dev/block.js:56
 msgid ""
 "Context value will be passed into the action hook as an additional argument."
 msgstr "Hodnota kontextu sa predá do háka akcie ako dodatočný parameter."
