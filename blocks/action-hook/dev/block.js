@@ -10,64 +10,80 @@
 ( ( wp ) => {
 	'use strict';
 
-	const { __ } = wp.i18n;
+	const
+		{ __ }  = wp.i18n,
+		Editor  = wp.blockEditor,
+		Comp    = wp.components,
+		Element = wp.element.createElement;
 
 	wp.blocks.registerBlockType( 'wmd/action-hook', {
 
 		edit: ( props ) => {
 
 			const
+				{ info, hooks }   = wmdActionHookBlock,
 				{ name, context } = props.attributes,
-				info = {
-					top: ( wmdActionHookBlock.info.top ) ? ( wp.element.createElement( 'p', { class: 'wp-block-wmd-action-hook-block__info--top' }, wmdActionHookBlock.info.top ) ) : ( '' ),
-					bottom: ( wmdActionHookBlock.info.bottom ) ? ( wp.element.createElement( 'p', { class: 'wp-block-wmd-action-hook-block__info--bottom' }, wmdActionHookBlock.info.bottom ) ) : ( '' ),
-				};
+				description       = ( name ) ? ( __( 'Executing this PHP code here:', 'action-hook-block' ) ) : ( __( 'Select a hook to execute here.', 'action-hook-block' ) ),
+				codeContext       = ( context ) ? ( ', $context' ) : ( '' );
 
-			let
-				description = __( 'Executing this PHP code here:', 'action-hook-block' ),
-				codeContext = ( context ) ? ( ', $context' ) : ( '' ),
-				code        = wp.element.createElement( 'code', {}, "do_action( '" + name + "'" + codeContext + " );" );
+			return Element(
 
-			if ( '' === name ) {
-				description = __( 'Select a hook to execute here.', 'action-hook-block' )
-				code        = '';
-			}
-
-			return wp.element.createElement( 'div', wp.blockEditor.useBlockProps( {
-					className: ( code ) ? ( 'has-hook-selected' ) : ( '' ),
+				/**
+				 * Preview container.
+				 */
+				'div',
+				Editor.useBlockProps( {
+					className: ( name ) ? ( 'has-hook-selected' ) : ( '' ),
         } ),
-				wp.element.createElement( wp.blockEditor.InspectorControls, {},
-					wp.element.createElement( wp.components.Panel, {},
-						wp.element.createElement( wp.components.PanelBody, {},
-							wp.element.createElement( wp.components.SelectControl,
+
+        /**
+         * "More options" sidebar.
+         */
+				Element( Editor.InspectorControls, {},
+					Element( Comp.Panel, {},
+						Element( Comp.PanelBody, {},
+							Element( Comp.SelectControl,
 								{
 									label    : __( 'Hook name', 'action-hook-block' ),
 									value    : name,
-									options  : wmdActionHookBlock.hooks,
-									onChange : ( newName ) => props.setAttributes( { name: newName } ),
+									options  : hooks,
+									onChange : ( newValue ) => props.setAttributes( { name: newValue } ),
 								}
 							),
-							wp.element.createElement( wp.components.TextControl,
+							Element( Comp.TextControl,
 								{
 									label    : __( 'Optional context', 'action-hook-block' ),
 									help     : __( 'Context value will be passed into the action hook as an additional argument.', 'action-hook-block' ),
 									value    : context,
-									onChange : ( newContext ) => props.setAttributes( { context: newContext } ),
+									onChange : ( newValue ) => props.setAttributes( { context: newValue } ),
 								}
 							),
 						),
 					),
 				),
-				info.top,
-				wp.element.createElement( 'span', {}, description ),
-				code,
-				info.bottom
+
+				/**
+				 * Preview inner HTML.
+				 */
+
+					// Additional info at top.
+					( info.top ) ? ( Element( 'p', { class: 'wp-block-wmd-action-hook-block__info--top' }, info.top ) ) : ( '' ),
+
+					// Description text.
+					Element( 'span', {}, description ),
+
+					// PHP code preview.
+					( name ) ? ( Element( 'code', {}, "do_action( '" + name + "'" + codeContext + " );" ) ) : ( '' ),
+
+					// Additional info at bottom.
+					( info.bottom ) ? ( Element( 'p', { class: 'wp-block-wmd-action-hook-block__info--bottom' }, info.bottom ) ) : ( '' )
+
 			);
 		},
 
 		save: function () {
 			// No need to output anything, just save the options.
-			wp.blockEditor.useBlockProps.save();
+			Editor.useBlockProps.save();
 		},
 
 	} );
