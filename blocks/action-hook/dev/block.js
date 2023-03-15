@@ -24,7 +24,8 @@
 				{ info, hooks }   = wmdActionHookBlock,
 				{ name, context } = props.attributes,
 				description       = ( name ) ? ( __( 'Executing this PHP code here:', 'action-hook-block' ) ) : ( __( 'Select a hook to execute here.', 'action-hook-block' ) ),
-				codeContext       = ( context ) ? ( ', $context' ) : ( '' );
+				codeName          = ( name ) ? ( Element( 'strong', {}, name ) ) : ( '' ),
+				codeContext       = ( context ) ? ( Element( 'span', {}, ', ', Element( 'em', {}, '$context' ) ) ) : ( '' );
 
 			return Element(
 
@@ -41,16 +42,16 @@
 				 */
 
 					// Additional info at top.
-					( info.top ) ? ( Element( 'p', { class: 'wp-block-wmd-action-hook-block__info--top' }, info.top ) ) : ( '' ),
+					( info.top ) ? ( Element( 'p', { className: 'wp-block-wmd-action-hook-block__info--top' }, info.top ) ) : ( '' ),
 
 					// Description text.
-					Element( 'span', {}, description ),
+					Element( 'span', { className: 'description' }, description ),
 
 					// PHP code preview.
-					( name ) ? ( Element( 'code', {}, "do_action( '" + name + "'" + codeContext + " );" ) ) : ( '' ),
+					( name ) ? ( Element( 'code', {}, "do_action( '", codeName, "'", codeContext, " );" ) ) : ( '' ),
 
 					// Additional info at bottom.
-					( info.bottom ) ? ( Element( 'p', { class: 'wp-block-wmd-action-hook-block__info--bottom' }, info.bottom ) ) : ( '' ),
+					( info.bottom ) ? ( Element( 'p', { className: 'wp-block-wmd-action-hook-block__info--bottom' }, info.bottom ) ) : ( '' ),
 
 				/**
 				 * Block settings sidebar.
