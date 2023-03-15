@@ -36,6 +36,6 @@ define( 'ACTION_HOOK_BLOCK_URL', plugin_dir_url( ACTION_HOOK_BLOCK_FILE ) ); // 
 
 // Load the functionality.
 require_once ACTION_HOOK_BLOCK_PATH . 'includes/Autoload.php';
-WebManDesign\Blocks\Action_Hook\Block::init();
-WebManDesign\Blocks\Action_Hook\Options::init();
-WebManDesign\Blocks\Action_Hook\Theme_Hook_Alliance::init();
+WebManDesign\Block\Action_Hook\Block::init();
+WebManDesign\Block\Action_Hook\Options::init();
+WebManDesign\Block\Action_Hook\Theme_Hook_Alliance::init();
