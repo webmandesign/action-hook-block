@@ -14,8 +14,9 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	padding: .5em 1em;
-	font-size: .8em;
+	padding: .25em;
+	font-size: 12px;
+	line-height: 1.25;
 	text-align: center;
 	background: $bg;
 	border: 1px solid darken( $bg, 10% );
