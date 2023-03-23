@@ -10,81 +10,93 @@
 ( ( wp ) => {
 	'use strict';
 
-	const
-		{ __ }  = wp.i18n,
-		Editor  = wp.blockEditor,
-		Comp    = wp.components,
-		Element = wp.element.createElement;
+	// Variables
 
-	wp.blocks.registerBlockType( 'wmd/action-hook', {
+		const
+			{ __ }  = wp.i18n,
+			Editor  = wp.blockEditor,
+			Comp    = wp.components,
+			Element = wp.element.createElement;
 
-		edit: ( props ) => {
 
-			const
-				{ info, hooks }   = wmdActionHookBlock,
-				{ name, context } = props.attributes,
-				description       = ( name ) ? ( __( 'Executing this PHP code here:', 'action-hook-block' ) ) : ( __( 'Select a hook to execute here.', 'action-hook-block' ) ),
-				codeName          = ( name ) ? ( Element( 'strong', {}, name ) ) : ( '' ),
-				codeContext       = ( context ) ? ( Element( 'span', {}, ', ', Element( 'em', {}, '$context' ) ) ) : ( '' );
+	// Processing
 
-			return Element(
+		wp.blocks.registerBlockType( 'wmd/action-hook', {
 
-				/**
-				 * Preview wrapper container.
-				 */
-				'div',
-				Editor.useBlockProps( {
-					className: ( name ) ? ( 'has-hook-selected' ) : ( '' ),
-				} ),
+			edit: ( props ) => {
 
-				/**
-				 * Preview inner elements.
-				 */
+				// Variables
 
-					// Additional info at top.
-					( info.top ) ? ( Element( 'p', { className: 'wp-block-wmd-action-hook-block__info--top' }, info.top ) ) : ( '' ),
+					const
+						{ info, hooks }   = wmdActionHookBlock,
+						{ name, context } = props.attributes,
+						description       = ( name ) ? ( __( 'Executing this PHP code here:', 'action-hook-block' ) ) : ( __( 'Select a hook to execute here.', 'action-hook-block' ) ),
+						codeName          = ( name ) ? ( Element( 'strong', {}, name ) ) : ( '' ),
+						codeContext       = ( context ) ? ( Element( 'span', {}, ', ', Element( 'em', {}, '$context' ) ) ) : ( '' );
 
-					// Description text.
-					Element( 'span', { className: 'description' }, description ),
 
-					// PHP code preview.
-					( name ) ? ( Element( 'code', {}, "do_action( '", codeName, "'", codeContext, " );" ) ) : ( '' ),
+				// Output
 
-					// Additional info at bottom.
-					( info.bottom ) ? ( Element( 'p', { className: 'wp-block-wmd-action-hook-block__info--bottom' }, info.bottom ) ) : ( '' ),
+					return Element(
 
-				/**
-				 * Block settings sidebar.
-				 */
-				Element( Editor.InspectorControls, {},
-					Element( Comp.PanelBody, {},
-						Element( Comp.SelectControl,
-							{
-								label    : __( 'Hook name', 'action-hook-block' ),
-								value    : name,
-								options  : hooks,
-								onChange : ( newValue ) => props.setAttributes( { name: newValue } ),
-							}
-						),
-						Element( Comp.TextControl,
-							{
-								label    : __( 'Optional context', 'action-hook-block' ),
-								help     : __( 'Context value will be passed into the action hook as an additional argument.', 'action-hook-block' ),
-								value    : context,
-								onChange : ( newValue ) => props.setAttributes( { context: newValue } ),
-							}
-						),
-					),
-				)
+						/**
+						 * Preview wrapper container.
+						 */
+						'div',
+						Editor.useBlockProps( {
+							className: ( name ) ? ( 'has-hook-selected' ) : ( '' ),
+						} ),
 
-			);
-		},
+						/**
+						 * Preview inner elements.
+						 */
 
-		save: function () {
-			// No need to output anything, just save the options.
-			Editor.useBlockProps.save();
-		},
+							// Additional info at top.
+							( info.top ) ? ( Element( 'p', { className: 'wp-block-wmd-action-hook-block__info--top' }, info.top ) ) : ( '' ),
 
-	} );
+							// Description text.
+							Element( 'span', { className: 'description' }, description ),
+
+							// PHP code preview.
+							( name ) ? ( Element( 'code', {}, "do_action( '", codeName, "'", codeContext, " );" ) ) : ( '' ),
+
+							// Additional info at bottom.
+							( info.bottom ) ? ( Element( 'p', { className: 'wp-block-wmd-action-hook-block__info--bottom' }, info.bottom ) ) : ( '' ),
+
+						/**
+						 * Block settings sidebar.
+						 */
+						Element( Editor.InspectorControls, {},
+							Element( Comp.PanelBody, {},
+								Element( Comp.SelectControl,
+									{
+										label    : __( 'Hook name', 'action-hook-block' ),
+										value    : name,
+										options  : hooks,
+										onChange : ( newValue ) => props.setAttributes( { name: newValue } ),
+									}
+								),
+								Element( Comp.TextControl,
+									{
+										label    : __( 'Optional context', 'action-hook-block' ),
+										help     : __( 'Context value will be passed into the action hook as an additional argument.', 'action-hook-block' ),
+										value    : context,
+										onChange : ( newValue ) => props.setAttributes( { context: newValue } ),
+									}
+								),
+							),
+						)
+					);
+			},
+
+			save: function () {
+
+				// Processing
+
+					// No need to output anything, just save the options.
+					Editor.useBlockProps.save();
+			},
+
+		} );
 
 } )( window.wp );

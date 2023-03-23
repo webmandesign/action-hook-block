@@ -133,8 +133,8 @@ class Theme_Hook_Alliance {
 				'tha_content_bottom' => esc_html_x( 'Content: Bottom (THA)', 'PHP action hook label.', 'action-hook-block' ),
 				'tha_content_after'  => esc_html_x( 'Content: After (THA)', 'PHP action hook label.', 'action-hook-block' ),
 
-				'tha_content_while_after'  => esc_html_x( 'Query Loop: After (THA)', 'PHP action hook label.', 'action-hook-block' ),
 				'tha_content_while_before' => esc_html_x( 'Query Loop: Before (THA)', 'PHP action hook label.', 'action-hook-block' ),
+				'tha_content_while_after'  => esc_html_x( 'Query Loop: After (THA)', 'PHP action hook label.', 'action-hook-block' ),
 
 				'tha_entry_before' => esc_html_x( 'Entry: Before (THA)', 'PHP action hook label.', 'action-hook-block' ),
 				'tha_entry_top'    => esc_html_x( 'Entry: Top (THA)', 'PHP action hook label.', 'action-hook-block' ),
