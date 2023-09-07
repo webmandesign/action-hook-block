@@ -5,9 +5,9 @@ Donate link:       https://www.webmandesign.eu/contact/#donation
 Author URI:        https://www.webmandesign.eu
 Plugin URI:        https://www.webmandesign.eu/portfolio/action-hook-block-wordpress-plugin/
 Requires at least: 6.1
-Tested up to:      6.1
+Tested up to:      6.3
 Requires PHP:      7.0
-Stable tag:        1.0.0
+Stable tag:        1.1.0
 License:           GNU General Public License v3
 License URI:       http://www.gnu.org/licenses/gpl-3.0.html
 Tags:              webman, webman design, blocks, block editor, block, tha, theme hook alliance, hooks, actions
@@ -90,6 +90,9 @@ Please see the [`changelog.md` file](https://github.com/webmandesign/action-hook
 
 
 == Upgrade Notice ==
+
+= 1.1.0 =
+Updating block API version.
 
 = 1.0.0 =
 Initial release.

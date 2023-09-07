@@ -5,7 +5,8 @@
  * @package    Action Hook Block
  * @copyright  WebMan Design, Oliver Juhas
  *
- * @since  1.0.0
+ * @since    1.0.0
+ * @version  1.1.0
  */
 
 namespace WebManDesign\Block\Action_Hook;
@@ -37,7 +38,8 @@ class Block {
 	/**
 	 * Register block.
 	 *
-	 * @since  1.0.0
+	 * @since    1.0.0
+	 * @version  1.1.0
 	 *
 	 * @return  void
 	 */
@@ -53,7 +55,7 @@ class Block {
 			 * @param  array $args
 			 */
 			$args = (array) apply_filters( 'action-hook-block/block/register/args', array(
-				'api_version' => 2,
+				'api_version' => 3,
 				'version'     => ACTION_HOOK_BLOCK_VERSION,
 
 				'title'       => esc_html__( 'Action hook', 'action-hook-block' ),

@@ -3,7 +3,7 @@
  * Plugin Name:  Action Hook Block
  * Plugin URI:   https://www.webmandesign.eu/portfolio/action-hook-block-wordpress-plugin/
  * Description:  A block to provide PHP action hook execution (such as Theme Hook Alliance hooks).
- * Version:      1.0.0
+ * Version:      1.1.0
  * Author:       WebMan Design, Oliver Juhas
  * Author URI:   https://www.webmandesign.eu/
  * License:      GNU General Public License v3
@@ -29,7 +29,7 @@
 defined( 'ABSPATH' ) || exit;
 
 // Constants.
-define( 'ACTION_HOOK_BLOCK_VERSION', '1.0.0' );
+define( 'ACTION_HOOK_BLOCK_VERSION', '1.1.0' );
 define( 'ACTION_HOOK_BLOCK_FILE', __FILE__ );
 define( 'ACTION_HOOK_BLOCK_PATH', plugin_dir_path( ACTION_HOOK_BLOCK_FILE ) ); // Trailing slashed.
 define( 'ACTION_HOOK_BLOCK_URL', plugin_dir_url( ACTION_HOOK_BLOCK_FILE ) ); // Trailing slashed.
